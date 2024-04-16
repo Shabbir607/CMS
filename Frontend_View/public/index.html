@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>CMS Project</title>
+
+  <link rel='shortcut icon' type='image/x-icon' href='' />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&family=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Nunito, system-ui, ui-sans-sarif;
+    }
+    *::selection{
+      background-color: #FFE8E0;
+    }
+    button, a{
+      user-select: none;
+    }
+
+    body {
+      height: 100vh;
+      overflow-x: hidden;
+      background-color: #FAFBFE;
+    }
+
+    /* width */
+    body::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    /* Track */
+    body::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    body::-webkit-scrollbar-thumb {
+      background: #603D56;
+      border-radius: 7px;
+    }
+
+    /* Handle on hover */
+    body::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+    .active-button {
+      background-color: #9D568A !important;
+      border-radius: 7px ;
+    }
+    .content {
+      margin-left: 210px;
+      padding: 70px 20px 20px 20px;
+      transition: margin-left 0.3s;
+    }
+
+    @media (max-width: 992px){
+      .content {
+        margin-left: 0;
+      }
+      .sidebar {
+        left: -210px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="app"></div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <script>
+    // **********************************************************************************
+    // Function to toggle the sidebar
+    function toggleSidebar() {
+      var sidebar = document.getElementById("sidebar");
+      var content = document.getElementById("content");
+
+      // Check if the sidebar is visible or not
+      var sidebarVisible = getComputedStyle(sidebar).left === "0px";
+
+      if (sidebarVisible) {
+        // If sidebar is visible, hide it
+        sidebar.style.left = "-210px";
+        content.style.marginLeft = "0";
+      } else {
+        // If sidebar is hidden, show it
+        sidebar.style.left = "0px";
+        content.style.marginLeft = "210px";
+      }
+    }
+
+    // Function to handle window resize
+    // function handleResize() {
+    //   var width = window.innerWidth;
+
+    //   if (width <= 992) {
+    //     // If window width is less than or equal to 992px, hide the sidebar
+    //     document.getElementById("sidebar").style.left = "-210px";
+    //     document.getElementById("content").style.marginLeft = "0";
+    //   } else {
+    //     // If window width is greater than 992px, show the sidebar
+    //     document.getElementById("sidebar").style.left = "0";
+    //     document.getElementById("content").style.marginLeft = "210px";
+    //   }
+    // }
+
+    // // Initial setup on page load
+    // document.addEventListener("DOMContentLoaded", function () {
+    //   handleResize();
+    // });
+
+    // // Event listener for window resize
+    // window.addEventListener("resize", function () {
+    //   handleResize();
+    // });
+// ************************************************************************************
+    // function changeColor(button) {
+    //   // Remove 'active-button' class from all buttons
+    //   var buttons = document.querySelectorAll('.dropdown-btn');
+    //   buttons.forEach(function(btn) {
+    //     btn.classList.remove('active-button');
+    //   });
+
+    //   // Add 'active-button' class to the clicked button
+    //   button.classList.add('active-button');
+    // }
+
+  </script>
+
+
+</body>
+
+</html>
